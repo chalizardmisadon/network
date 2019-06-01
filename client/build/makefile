@@ -1,0 +1,20 @@
+ROOTDIR := ../../
+PROJDIR := ../
+
+FILENAME := msg
+OUTFILE := $(FILENAME)
+MAIN_C := main.c
+CLIENT := $(FILENAME)_clnt.c
+
+PREREQ :=
+PREREQ += $(PROJDIR)$(MAIN_C)
+PREREQ += $(PROJDIR)$(CLIENT)
+
+INC :=
+INC += -I$(ROOTDIR)
+INC += -I$(PROJDIR)
+
+
+$(OUTFILE): $(PREREQ)
+	$(MAKE) -C $(ROOTDIR)
+	gcc $(INC) $(PREREQ) -o $(OUTFILE) -lnsl

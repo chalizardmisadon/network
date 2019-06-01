@@ -1,0 +1,24 @@
+ROOTDIR := ./
+CLNTDIR := $(ROOTDIR)/client/
+SVCDIR := $(ROOTDIR)/server/
+
+
+FILENAME := msg
+
+RPCFILE := $(FILENAME).x
+HEADER := $(FILENAME).h
+CLIENT := $(FILENAME)_clnt.c
+SERVER := $(FILENAME)_svc.c
+
+TARGET :=
+TARGET += $(HEADER)
+TARGET += $(CLNTDIR)$(CLIENT)
+TARGET += $(SVCDIR)$(SERVER)
+
+
+all: $(TARGET)
+
+$(TARGET): $(RPCFILE)
+	rpcgen $(RPCFILE)
+	mv $(CLIENT) $(CLNTDIR)$(CLIENT)
+	mv $(SERVER) $(SVCDIR)$(SERVER)
