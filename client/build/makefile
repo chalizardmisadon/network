@@ -16,5 +16,5 @@ INC += -I$(PROJDIR)
 
 
 $(OUTFILE): $(PREREQ)
-	$(MAKE) -C $(ROOTDIR)
+#	$(MAKE) -C $(ROOTDIR)
 	gcc $(INC) $(PREREQ) -o $(OUTFILE) -lnsl
