@@ -6,7 +6,7 @@
         {
             "label": "Build RPCGen",
             "type": "shell",
-            "command": "make -C ${workspaceFolder}",
+            "command": "make -C ${workspaceFolder}/build",
             "group": "build",
             "problemMatcher": []
         },
