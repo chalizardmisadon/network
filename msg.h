@@ -30,20 +30,52 @@ extern  int * printmessage_1_svc();
 extern int messageprog_1_freeresult ();
 #endif /* K&R C */
 
-#define TRIPLE_PROG 0x100000001
-#define TRIPLE_INT_VERS 1
+#define MULTI_PROG 0x100000001
+#define TWO_INT_VERS_1 1
 
 #if defined(__STDC__) || defined(__cplusplus)
-#define TRIPLE_INT 1
-extern  int * triple_int_1(int *, CLIENT *);
-extern  int * triple_int_1_svc(int *, struct svc_req *);
-extern int triple_prog_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
+#define TWO_INT 2
+extern  int * two_int_1(int *, CLIENT *);
+extern  int * two_int_1_svc(int *, struct svc_req *);
+#define THREE_INT 3
+extern  int * three_int_1(int *, CLIENT *);
+extern  int * three_int_1_svc(int *, struct svc_req *);
+#define FOUR_INT 4
+extern  int * four_int_1(int *, CLIENT *);
+extern  int * four_int_1_svc(int *, struct svc_req *);
+extern int multi_prog_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
 
 #else /* K&R C */
-#define TRIPLE_INT 1
-extern  int * triple_int_1();
-extern  int * triple_int_1_svc();
-extern int triple_prog_1_freeresult ();
+#define TWO_INT 2
+extern  int * two_int_1();
+extern  int * two_int_1_svc();
+#define THREE_INT 3
+extern  int * three_int_1();
+extern  int * three_int_1_svc();
+#define FOUR_INT 4
+extern  int * four_int_1();
+extern  int * four_int_1_svc();
+extern int multi_prog_1_freeresult ();
+#endif /* K&R C */
+#define TWO_INT_VERS_2 2
+
+#if defined(__STDC__) || defined(__cplusplus)
+extern  int * two_int_2(int *, CLIENT *);
+extern  int * two_int_2_svc(int *, struct svc_req *);
+extern  int * three_int_2(int *, CLIENT *);
+extern  int * three_int_2_svc(int *, struct svc_req *);
+extern  int * four_int_2(int *, CLIENT *);
+extern  int * four_int_2_svc(int *, struct svc_req *);
+extern int multi_prog_2_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
+
+#else /* K&R C */
+extern  int * two_int_2();
+extern  int * two_int_2_svc();
+extern  int * three_int_2();
+extern  int * three_int_2_svc();
+extern  int * four_int_2();
+extern  int * four_int_2_svc();
+extern int multi_prog_2_freeresult ();
 #endif /* K&R C */
 
 #ifdef __cplusplus
