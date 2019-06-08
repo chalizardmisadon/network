@@ -5,7 +5,7 @@
 .directory
 .svn
 .vscode
-.*
+.*/
 **/release
 **/build
 
