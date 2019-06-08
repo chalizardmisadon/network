@@ -1,3 +1,21 @@
-.directory
-.vscode/ipch
+# clang intellisense
 .clang_complete
+
+# ignore directories
+.directory
+.svn
+.vscode
+.*
+**/release
+**/build
+
+# ignore files
+*.patch
+*.o
+
+# include makefiles
+!Makefile
+!makefile
+!*.mk
+!*.make
+
