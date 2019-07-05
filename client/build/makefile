@@ -1,20 +1,20 @@
-ROOTDIR := ../../
-PROJDIR := ../
+# program
+PROG := client_rpc
+FILE := msg
 
-FILENAME := msg
-OUTFILE := $(FILENAME)
-MAIN_C := main.c
-CLIENT := $(FILENAME)_clnt.c
+# directories
+ROOTDIR := ../../../
+MAKEDIR := $(ROOTDIR)
 
-PREREQ :=
-PREREQ += $(PROJDIR)$(MAIN_C)
-PREREQ += $(PROJDIR)$(CLIENT)
+VPATH :=
+OBJS :=
 
-INC :=
-INC += -I$(ROOTDIR)
-INC += -I$(PROJDIR)
+VPATH += ../
+VPATH += ../../
+
+OBJS += main
+OBJS += $(FILE)_clnt
 
 
-$(OUTFILE): $(PREREQ)
-#	$(MAKE) -C $(ROOTDIR)
-	gcc $(INC) $(PREREQ) -o $(OUTFILE) -lnsl
+
+include $(MAKEDIR)/makerules/rules.mk
