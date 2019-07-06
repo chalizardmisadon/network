@@ -1,5 +1,5 @@
 # program
-PROG := client_rpc
+PROG := server_rpc
 FILE := msg
 
 # directories
@@ -10,10 +10,10 @@ VPATH :=
 OBJS :=
 
 VPATH += ../
-VPATH += ../../
+VPATH += ../../include
 
-OBJS += main
-OBJS += $(FILE)_clnt
+OBJS += $(FILE)_server
+OBJS += $(FILE)_svc
 
 
 

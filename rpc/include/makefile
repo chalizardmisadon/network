@@ -1,6 +1,6 @@
-ROOTDIR := ./
-CLNTDIR := $(ROOTDIR)/client/
-SVCDIR := $(ROOTDIR)/server/
+ROOTDIR := ../
+CLNTDIR := $(ROOTDIR)client/
+SVCDIR := $(ROOTDIR)server/
 
 
 FILENAME := msg
@@ -22,3 +22,8 @@ $(TARGET): $(RPCFILE)
 	rpcgen $(RPCFILE)
 	mv $(CLIENT) $(CLNTDIR)$(CLIENT)
 	mv $(SERVER) $(SVCDIR)$(SERVER)
+
+.PHONY: clean
+clean:
+	rm -f $(TARGET)
+
