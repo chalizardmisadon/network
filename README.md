@@ -1,2 +1,2 @@
 # rpc
-A basic RPC code to learn about coding RPC
+Repo to learn about simple networking
