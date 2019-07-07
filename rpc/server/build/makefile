@@ -3,18 +3,16 @@ PROG := server_rpc
 FILE := msg
 
 # directories
-ROOTDIR := ../../../
+ROOTDIR := ../../../../
 MAKEDIR := $(ROOTDIR)
 
 VPATH :=
-OBJS :=
-
 VPATH += ../
 VPATH += ../../include
 
+OBJS :=
 OBJS += $(FILE)_server
 OBJS += $(FILE)_svc
-
 
 
 include $(MAKEDIR)/makerules/rules.mk

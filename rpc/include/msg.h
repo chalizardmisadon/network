@@ -13,6 +13,31 @@
 extern "C" {
 #endif
 
+#define MAXNAMELEN 255
+
+typedef char *nametype;
+
+typedef struct namenode *namelist;
+
+typedef struct {
+	u_int namearray_len;
+	struct namenode *namearray_val;
+} namearray;
+
+struct namenode {
+	nametype name;
+	namelist next;
+};
+typedef struct namenode namenode;
+
+struct readdir_res {
+	int errno;
+	union {
+		namelist list_0;
+		namelist list_1;
+	} readdir_res_u;
+};
+typedef struct readdir_res readdir_res;
 
 #define MESSAGEPROG 0x20000001
 #define PRINTMESSAGEVERS 1
@@ -76,6 +101,24 @@ extern  int * three_int_2_svc();
 extern  int * four_int_2();
 extern  int * four_int_2_svc();
 extern int multi_prog_2_freeresult ();
+#endif /* K&R C */
+
+/* the xdr functions */
+
+#if defined(__STDC__) || defined(__cplusplus)
+extern  bool_t xdr_nametype (XDR *, nametype*);
+extern  bool_t xdr_namelist (XDR *, namelist*);
+extern  bool_t xdr_namearray (XDR *, namearray*);
+extern  bool_t xdr_namenode (XDR *, namenode*);
+extern  bool_t xdr_readdir_res (XDR *, readdir_res*);
+
+#else /* K&R C */
+extern bool_t xdr_nametype ();
+extern bool_t xdr_namelist ();
+extern bool_t xdr_namearray ();
+extern bool_t xdr_namenode ();
+extern bool_t xdr_readdir_res ();
+
 #endif /* K&R C */
 
 #ifdef __cplusplus
